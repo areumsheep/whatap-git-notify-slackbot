@@ -83,6 +83,7 @@ function main() {
     let titleText = '';
     let channelId = '';
 
+    console.log(context);
     console.log(context.eventName);
     console.log(context.payload.action);
     
