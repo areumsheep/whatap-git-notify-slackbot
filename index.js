@@ -83,12 +83,15 @@ function main() {
     let titleText = '';
     let channelId = '';
 
+    console.log(context.eventName);
+    console.log(context.payload.action);
+    
     if (context.eventName === 'issue_comment') {
       if (context.payload.action === 'created') {
         const commentUser = context.payload.comment.user.login;
         const prOwner = context.payload.issue.user.login;
 
-        if (commentUser === prOwner) return;
+        // if (commentUser === prOwner) return;
 
         if (!slackUserInfo[prOwner]) {
           console.log(`[댓글 등록 단계 메세지 전송 실패] ${commentUser}의 정보가 없습니다.`);
