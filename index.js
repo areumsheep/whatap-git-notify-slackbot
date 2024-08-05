@@ -88,7 +88,9 @@ function main() {
 
     console.log('github');
     console.log(context);
-    console.log(context.requested_reviewer);
+    console.log('---------------');
+    console.log(context.payload);
+    console.log(context.payload.pull_request);
     
     if (context.eventName === 'issue_comment') {
       if (context.payload.action === 'created') {
