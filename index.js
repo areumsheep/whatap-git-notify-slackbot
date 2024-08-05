@@ -87,8 +87,8 @@ function main() {
     console.log(JSON.stringify(context));
 
     console.log('github');
-    console.log(github.event);
-    console.log(github.event.requested_reviewer);
+    console.log(context);
+    console.log(context.requested_reviewer);
     
     if (context.eventName === 'issue_comment') {
       if (context.payload.action === 'created') {
