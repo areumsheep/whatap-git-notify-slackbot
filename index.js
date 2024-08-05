@@ -85,12 +85,14 @@ function main() {
 
     console.log('context');
     console.log(JSON.stringify(context));
+    
+    console.log('context.payload---');
+    console.log(JSON.stringify(context.payload));
+    console.log('context.payload.pull_request---')
+    console.log(JSON.stringify(context.payload.pull_request));
 
-    console.log('github');
-    console.log(context);
-    console.log('---------------');
-    console.log(context.payload);
-    console.log(context.payload.pull_request);
+    console.log('context.payload.pull_request---')
+    console.log(JSON.stringify(context.payload.pull_request));
     
     if (context.eventName === 'issue_comment') {
       if (context.payload.action === 'created') {
